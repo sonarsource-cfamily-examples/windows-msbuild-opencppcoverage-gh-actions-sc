@@ -23,7 +23,7 @@ jobs:
       - name: Install OpenCppCoverage # Needed to generate coverage
         run: |
           curl -L https://github.com/OpenCppCoverage/OpenCppCoverage/releases/download/release-0.9.9.0/OpenCppCoverageSetup-x64-0.9.9.0.exe -o OpenCppCoverageSetup.exe
-          .\OpenCppCoverageSetup.exe /SUPRESSMSGBOXES /NORESTART -NoNewWindow -Wait /SILENT
+          Start-Process -FilePath .\OpenCppCoverageSetup.exe -ArgumentList "/SUPRESSMSGBOXES /NORESTART /VERYSILENT" -NoNewWindow -Wait
 
       - name: Install sonar-scanner and build-wrapper
         uses: SonarSource/sonarcloud-github-c-cpp@v1
