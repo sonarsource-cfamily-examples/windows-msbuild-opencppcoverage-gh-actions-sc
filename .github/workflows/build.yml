@@ -23,7 +23,7 @@ jobs:
       - name: Install OpenCppCoverage # Needed to generate coverage
         run: |
           curl -L https://github.com/OpenCppCoverage/OpenCppCoverage/releases/download/release-0.9.9.0/OpenCppCoverageSetup-x64-0.9.9.0.exe -o OpenCppCoverageSetup.exe
-          .\OpenCppCoverageSetup.exe /SUPRESSMSGBOXES /NORESTART -NoNewWindow -Wait
+          .\OpenCppCoverageSetup.exe /SUPRESSMSGBOXES /NORESTART -NoNewWindow -Wait /SILENT
 
       - name: Install sonar-scanner and build-wrapper
         uses: SonarSource/sonarcloud-github-c-cpp@v1
@@ -38,7 +38,6 @@ jobs:
       - name: Run tests with coverage
         run: |
           &"C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --cover_children --sources=$(pwd) --modules test*\*\test*.dll "--export_type=cobertura:cobertura.xml" -- vstest.console.exe test1\*\test1.dll test2\*\test2.dll
-          &"C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources=$(pwd) "--export_type=cobertura:cobertura.xml" -- vstest.console.exe test1\*\test1.dll test2\*\test2.dll 
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
