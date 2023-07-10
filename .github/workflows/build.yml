@@ -19,11 +19,15 @@ jobs:
 
       - name: Set up msbuild
         uses: microsoft/setup-msbuild@v1.1
-      - name: Setup VSTest.console.exe # Needed to run tests and generate coverage
-        uses: darenm/Setup-VSTest@v1.2
 
       - name: Install sonar-scanner and build-wrapper
         uses: SonarSource/sonarcloud-github-c-cpp@v1
+
+      - name: Install OpenCppCoverage
+        run: |
+          curl https://github.com/OpenCppCoverage/OpenCppCoverage/releases/download/release-0.9.9.0/OpenCppCoverageSetup-x64-0.9.9.0.exe -o OpenCppCoverageSetup.exe
+          .\OpenCppCoverageSetup.exe /VERYSILENT /SUPRESSMSGBOXES /NORESTART -NoNewWindow -Wait
+          echo "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" >> ${GITHUB_PATH}
 
       - name: Run build-wrapper
         run: |
@@ -34,10 +38,9 @@ jobs:
           msbuild test2\test2.vcxproj
       - name: Run tests with coverage
         run: >
-          vstest.console.exe test1\*\test1.dll test2\*\test2.dll 
-          /EnableCodeCoverage 
-          /Collect:"Code Coverage;Format=Xml" 
-          /ResultsDirectory:"${{ env.COVERAGE_RESULTS }}"
+          OpenCppCoverage.exe --sources=. --output_coverage=Coverage.cov -- test1\test1.exe
+          OpenCppCoverage.exe --sources=. --input_coverage=Coverage.cov -- test2\test2.exe
+          OpenCppCoverage.exe --sources=. --input_coverage=Coverage.cov "--export_type=cobertura:${{ env.COVERAGE_RESULTS }}\cobertura.xml"
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,4 +48,4 @@ jobs:
         run: >
           sonar-scanner 
           --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}"
-          --define sonar.cfamily.vscoveragexml.reportsPath="${{ env.COVERAGE_RESULTS }}/*/*.xml"
+          --define sonar.cfamily.cobertura.reportPaths="${{ env.COVERAGE_RESULTS }}/cobertura.xml"
