@@ -25,7 +25,7 @@ jobs:
 
       - name: Install OpenCppCoverage
         run: |
-          curl https://github.com/OpenCppCoverage/OpenCppCoverage/releases/download/release-0.9.9.0/OpenCppCoverageSetup-x64-0.9.9.0.exe -o OpenCppCoverageSetup.exe
+          curl -L https://github.com/OpenCppCoverage/OpenCppCoverage/releases/download/release-0.9.9.0/OpenCppCoverageSetup-x64-0.9.9.0.exe -o OpenCppCoverageSetup.exe
           .\OpenCppCoverageSetup.exe /VERYSILENT /SUPRESSMSGBOXES /NORESTART -NoNewWindow -Wait
           echo "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" >> ${GITHUB_PATH}
 
