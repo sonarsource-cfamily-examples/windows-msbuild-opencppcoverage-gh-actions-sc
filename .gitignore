@@ -37,3 +37,6 @@ Release
 # XCode
 *.xcodeproj/project.xcworkspace/
 *.xcodeproj/xcuserdata/
+
+# Cobertura report
+cobertura.xml
