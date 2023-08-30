@@ -1,14 +1,14 @@
 = C++ example project for generating test coverage with OpenCppCoverage coverage tool
 // URIs:
-:uri-qg-status: https://sonarcloud.io/dashboard?id=alejandro-alvarez-sonarsource_windows-msbuild-opencppcoverage-actions-sc
-:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=alejandro-alvarez-sonarsource_windows-msbuild-opencppcoverage-actions-sc&metric=alert_status
-:uri-build-status: https://github.com/alejandro-alvarez-sonarsource/windows-msbuild-opencppcoverage-actions-sc/actions/workflows/build.yml
-:img-build-status: https://github.com/alejandro-alvarez-sonarsource/windows-msbuild-opencppcoverage-actions-sc/actions/workflows/build.yml/badge.svg
+:uri-qg-status: https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_windows-msbuild-opencppcoverage-actions-sc
+:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sonarsource-cfamily-examples_windows-msbuild-opencppcoverage-actions-sc&metric=alert_status
+:uri-build-status: https://github.com/sonarsource-cfamily-examples/windows-msbuild-opencppcoverage-actions-sc/actions/workflows/build.yml
+:img-build-status: https://github.com/sonarsource-cfamily-examples/windows-msbuild-opencppcoverage-actions-sc/actions/workflows/build.yml/badge.svg
 
 image:{img-build-status}[Build Status, link={uri-build-status}]
 image:{img-qg-status}[Quality Gate Status,link={uri-qg-status}]
 
-*The test coverage shown here works on both SonarQube and SonarCloud. This project is analysed on https://sonarcloud.io/dashboard?id=alejandro-alvarez-sonarsource_windows-msbuild-opencppcoverage-actions-sc[SonarCloud]!*
+*The test coverage shown here works on both SonarQube and SonarCloud. This project is analysed on https://sonarcloud.io/dashboard?id=sonarsource-cfamily-examples_windows-msbuild-opencppcoverage-actions-sc[SonarCloud]!*
 
 :note-caption: :information_source:
 NOTE: This simple example aims at demonstrating code coverage in action. It explains how to add coverage on a project for which the analysis is already configured. Analysis configuration examples are available https://github.com/sonarsource-cfamily-examples?q=topic%3Amsbuild[here]. +
