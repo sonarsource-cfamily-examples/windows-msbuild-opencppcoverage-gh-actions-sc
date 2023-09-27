@@ -1,7 +1,7 @@
 = C++ example project for generating test coverage with OpenCppCoverage coverage tool
 // URIs:
-:uri-qg-status: https://sonarcloud.io/project/overview?id=sonarsource-cfamily-examples_windows-msbuild-opencppcoverage-actions-sc
-:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sonarsource-cfamily-examples_windows-msbuild-opencppcoverage-actions-sc&metric=alert_status
+:uri-qg-status: https://sonarcloud.io/project/overview?id=sonarsource-cfamily-examples_windows-msbuild-opencppcoverage-gh-actions-sc
+:img-qg-status: https://sonarcloud.io/api/project_badges/measure?project=sonarsource-cfamily-examples_windows-msbuild-opencppcoverage-gh-actions-sc&metric=alert_status
 :uri-build-status: https://github.com/sonarsource-cfamily-examples/windows-msbuild-opencppcoverage-gh-actions-sc/actions/workflows/build.yml
 :img-build-status: https://github.com/sonarsource-cfamily-examples/windows-msbuild-opencppcoverage-gh-actions-sc/actions/workflows/build.yml/badge.svg
 
