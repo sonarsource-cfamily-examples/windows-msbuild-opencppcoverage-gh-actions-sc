@@ -26,7 +26,7 @@ jobs:
           Start-Process -FilePath .\OpenCppCoverageSetup.exe -ArgumentList "/SUPRESSMSGBOXES /NORESTART /VERYSILENT" -NoNewWindow -Wait
 
       - name: Install sonar-scanner and build-wrapper
-        uses: SonarSource/sonarcloud-github-c-cpp@v2
+        uses: sonarsource/sonarcloud-github-c-cpp@v3
 
       - name: Run build-wrapper
         run: |
