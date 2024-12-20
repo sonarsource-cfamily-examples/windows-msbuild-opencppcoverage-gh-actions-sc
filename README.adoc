@@ -25,7 +25,7 @@ You can take a look at the link:sonar-project.properties[sonar-project.propertie
 = Documentation
 
 - https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/languages/c-family/overview/[C/C++/Objective-C analysis overview]
-- https://docs.sonarcloud.io/getting-started/github/[Getting started with GitHub]
+- https://docs.sonarsource.com/sonarqube-cloud/getting-started/github/[Getting started with GitHub]
 - https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/languages/c-family/prerequisites/#generating-a-compilation-database[Generating a compilation database]
 - https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/languages/c-family/running-the-analysis/[Running the CFamily analysis]
 - https://docs.sonarsource.com/sonarqube-cloud/enriching/test-coverage/test-coverage-parameters/[Test coverage parameters]
